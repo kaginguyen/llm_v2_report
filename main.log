@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.16)  9 JAN 2025 17:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.16)  9 JAN 2025 18:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -547,7 +547,9 @@ Package pdftex.def Info: images/overview_self_rag.jpeg  used on input line 29.
 
 [2 <./images/overview_self_rag.jpeg>]
 
-[3] (./main.aux)
+[3]
+
+[4] (./main.aux)
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
@@ -557,18 +559,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 10298 strings out of 473362
- 193027 string characters out of 5720989
- 1008425 words of memory out of 5000000
- 33328 multiletter control sequences out of 15000+600000
+ 10299 strings out of 473362
+ 193039 string characters out of 5720989
+ 1008448 words of memory out of 5000000
+ 33329 multiletter control sequences out of 15000+600000
  568460 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,7n,81p,2132b,1333s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnti10.pfb>
-Output written on main.pdf (3 pages, 695240 bytes).
+Output written on main.pdf (4 pages, 695887 bytes).
 PDF statistics:
- 45 PDF objects out of 1000 (max. 8388607)
- 26 compressed objects within 1 object stream
+ 48 PDF objects out of 1000 (max. 8388607)
+ 28 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
