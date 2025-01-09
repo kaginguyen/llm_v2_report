@@ -1,0 +1,69 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nty/global//global/global/global}
+    \entry{jeong2024adaptive}{article}{}{}
+      \name{author}{5}{}{%
+        {{hash=5effb324ae23c45a5ed6c379c02d1f10}{%
+           family={Jeong},
+           familyi={J\bibinitperiod},
+           given={Soyeong},
+           giveni={S\bibinitperiod}}}%
+        {{hash=ff5281e1a75bba240117217ff198aa41}{%
+           family={Baek},
+           familyi={B\bibinitperiod},
+           given={Jinheon},
+           giveni={J\bibinitperiod}}}%
+        {{hash=963bfb7e05a5bfdba5e1a846020c5643}{%
+           family={Cho},
+           familyi={C\bibinitperiod},
+           given={Sukmin},
+           giveni={S\bibinitperiod}}}%
+        {{hash=26e9652e54363519145e771809e712ac}{%
+           family={Hwang},
+           familyi={H\bibinitperiod},
+           given={Sung\bibnamedelima Ju},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=e75e4d3be6b578e71634ad164e4b4533}{%
+           family={Park},
+           familyi={P\bibinitperiod},
+           given={Jong\bibnamedelima C},
+           giveni={J\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
+      }
+      \strng{namehash}{5536713e475859d61c0addffdea46ac3}
+      \strng{fullhash}{a26aebd95c8a4397d39434c49c5b104b}
+      \strng{fullhashraw}{a26aebd95c8a4397d39434c49c5b104b}
+      \strng{bibnamehash}{5536713e475859d61c0addffdea46ac3}
+      \strng{authorbibnamehash}{5536713e475859d61c0addffdea46ac3}
+      \strng{authornamehash}{5536713e475859d61c0addffdea46ac3}
+      \strng{authorfullhash}{a26aebd95c8a4397d39434c49c5b104b}
+      \strng{authorfullhashraw}{a26aebd95c8a4397d39434c49c5b104b}
+      \field{sortinit}{J}
+      \field{sortinithash}{b2f54a9081ace9966a7cb9413811edb4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2403.14403}
+      \field{title}{Adaptive-rag: Learning to adapt retrieval-augmented large language models through question complexity}
+      \field{year}{2024}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
