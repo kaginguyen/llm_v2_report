@@ -1,5 +1,5 @@
 \contentsline {section}{\numberline {1}Giới thiệu sơ lược}{1}{}%
-\contentsline {section}{\numberline {2}Các công trình liên quan}{4}{}%
+\contentsline {section}{\numberline {2}Các công trình liên quan}{3}{}%
 \contentsline {section}{\numberline {3}Self-RAG: Học cách tìm nguồn, tạo sinh và đánh giá}{4}{}%
 \contentsline {subsection}{\numberline {3.1}Sơ lược bài toán và phương pháp}{4}{}%
 \contentsline {subsection}{\numberline {3.2}Huấn luyện Self-RAG}{4}{}%
