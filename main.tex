@@ -52,10 +52,26 @@ Một vài nghiên cứu thiên và hướng tinh chỉnh prompt trước khi đ
 
 Một hướng nghiên cứu khác đang có tính ứng dụng cao là fine tune các mô hình LLM thông qua việc sử dụng phản hồi của người (Reinforcement Learning from Human Feedback) để điều khiển các LLM trả lời, từ đó cho phép mô hình trả lời hiệu quả hơn. Tuy nhiên hướng đi này chủ yếu là giúp tinh chỉnh đầu ra của mô hình theo format mà người thiết kế muốn, hoặc điều chỉnh khả năng suy luận của mô hình hơn là tập trung vào việc trả lời một cách có trọng tâm và có dẫn chứng. Bên cạnh đó, Self-RAG do chỉ chỉnh sửa dữ liệu đầu vào trước khi đưa vào huấn luyện nên chi phí thấp hơn nhiều khi mà RLHF đòi hỏi cần có sự đánh giá của con người với các kết quả tạo sinh.
 
+Nhìn chung thì các nghiên cứu phần lớn đều chú trọng vài bài toán riêng biệt và Self-RAG cũng tương tự như vậy nhưng bổ sung thêm sự cải thiện về độ linh hoạt và chi phí tính toán mà các nghiên cứu khác đang tạm bỏ qua. Trong phần sau nhóm sẽ trình bày cách chi tiết hơn cách mà Self-RAG thực hiện những thay đổi và lý do cho những lựa chọn đó. 
 
 \section{Self-RAG: Học cách tìm nguồn, tạo sinh và đánh giá}
 
 \subsection{Sơ lược bài toán và phương pháp}
+Với một mô hình LLM là $\mathcal{M}$ thì khi đưa input là $x$ vào thì mô hình sẽ cần phải tạo sinh ra các output $y$ với $y = [y_1,...y_T]$. Mỗi một $y_t$ có thể là một token trong từ điển hoặc là một token đặc biệt như Reflection Token như đã giới thiệu ở trên. Khi một Retrieve token được tạo ra thì mô hình sẽ cân nhắc việc gọi truy vấn dữ liệu, và đánh giá kết quả của truy vấn có phù hợp để đưa vào chuỗi $y$ hay không. Chi tiết hơn về quy trình này có thể xem tại Hình và danh sách các Token thì sẽ như Hình. 
+
+\begin{figure} 
+    \centering
+    \includegraphics[scale = 0.2]{reflection_token_explanation.jpeg}
+    \caption{Ví dụ về Danh Sách Luật Bayesian}
+    \label{fig:reflection_token_explanation}
+\end{figure}
+
+\begin{figure} 
+    \centering
+    \includegraphics[scale = 0.2]{self_rag_pseudo_code.jpeg}
+    \caption{Ví dụ về Danh Sách Luật Bayesian}
+    \label{fig:self_rag_pseudo_code}
+\end{figure}
 
 \subsection{Huấn luyện Self-RAG}
 

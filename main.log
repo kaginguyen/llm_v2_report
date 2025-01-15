@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.16)  13 JAN 2025 16:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.16)  15 JAN 2025 16:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -548,8 +548,26 @@ Package pdftex.def Info: images/overview_self_rag.jpeg  used on input line 29.
 [2 <./images/overview_self_rag.jpeg>]
 
 [3]
+<images/reflection_token_explanation.jpeg, id=18, 1722.435pt x 381.425pt>
+File: images/reflection_token_explanation.jpeg Graphic file (type jpg)
+<use images/reflection_token_explanation.jpeg>
+Package pdftex.def Info: images/reflection_token_explanation.jpeg  used on input line 64.
+(pdftex.def)             Requested size: 344.4809pt x 76.28365pt.
+<images/self_rag_pseudo_code.jpeg, id=19, 1747.52875pt x 677.53125pt>
+File: images/self_rag_pseudo_code.jpeg Graphic file (type jpg)
+<use images/self_rag_pseudo_code.jpeg>
+Package pdftex.def Info: images/self_rag_pseudo_code.jpeg  used on input line 71.
+(pdftex.def)             Requested size: 349.49956pt x 135.50385pt.
 
-[4] (./main.aux)
+Overfull \hbox (4.49956pt too wide) in paragraph at lines 71--72
+ [][] 
+ []
+
+
+
+[4 <./images/reflection_token_explanation.jpeg>]
+
+[5 <./images/self_rag_pseudo_code.jpeg>] (./main.aux)
  ***********
 LaTeX2e <2024-11-01>
 L3 programming layer <2024-11-02>
@@ -559,18 +577,18 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 10299 strings out of 473362
- 193039 string characters out of 5720989
- 1008448 words of memory out of 5000000
- 33329 multiletter control sequences out of 15000+600000
+ 10319 strings out of 473362
+ 193839 string characters out of 5720989
+ 1008492 words of memory out of 5000000
+ 33349 multiletter control sequences out of 15000+600000
  568460 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,7n,81p,2132b,1333s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnti10.pfb>
-Output written on main.pdf (4 pages, 698524 bytes).
+</usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnti10.pfb>
+Output written on main.pdf (5 pages, 1263707 bytes).
 PDF statistics:
- 48 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 78 PDF objects out of 1000 (max. 8388607)
+ 45 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
