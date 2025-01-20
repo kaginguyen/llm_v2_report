@@ -57,23 +57,28 @@ Nhìn chung thì các nghiên cứu phần lớn đều chú trọng vài bài t
 \section{Self-RAG: Học cách tìm nguồn, tạo sinh và đánh giá}
 
 \subsection{Sơ lược bài toán và phương pháp}
-Với một mô hình LLM là $\mathcal{M}$ thì khi đưa input là $x$ vào thì mô hình sẽ cần phải tạo sinh ra các output $y$ với $y = [y_1,...y_T]$. Mỗi một $y_t$ có thể là một token trong từ điển hoặc là một token đặc biệt như Reflection Token như đã giới thiệu ở trên. Khi một Retrieve token được tạo ra thì mô hình sẽ cân nhắc việc gọi truy vấn dữ liệu, và đánh giá kết quả của truy vấn có phù hợp để đưa vào chuỗi $y$ hay không. Chi tiết hơn về quy trình này có thể xem tại Hình và danh sách các Token thì sẽ như Hình. 
+Với một mô hình LLM là $\mathcal{M}$ thì khi đưa input là $x$ vào thì mô hình sẽ cần phải tạo sinh ra các output $y$ với $y = [y_1,...y_T]$. Mỗi một $y_t$ có thể là một token trong từ điển hoặc là một token đặc biệt như Reflection Token như đã giới thiệu, và từ đó tự đánh giá hoặc yêu cầu truy vấn để hỗ trợ, làm hoàn thiện câu trả lời hơn. Khi một Retrieve token được tạo ra thì mô hình sẽ cân nhắc việc gọi truy vấn dữ liệu, và đánh giá kết quả của truy vấn có phù hợp để đưa vào chuỗi $y$ hay không. Chi tiết hơn về quy trình này có thể xem tại Hình \ref{fig:self_rag_pseudo_code} và danh sách các Token thì tham khảo ở Hình \ref{fig:reflection_token_explanation}. 
 
 \begin{figure} 
     \centering
     \includegraphics[scale = 0.2]{reflection_token_explanation.jpeg}
-    \caption{Ví dụ về Danh Sách Luật Bayesian}
+    \caption{Các Retrieval Token có thể xuất hiện, đã được cài đặt trong bộ dữ liệu huấn luyện chuyên biệt. Trừ Retrieve thì còn lại là các token bổ trợ cho quá trình đánh giá (Critique). }
     \label{fig:reflection_token_explanation}
 \end{figure}
 
 \begin{figure} 
     \centering
-    \includegraphics[scale = 0.2]{self_rag_pseudo_code.jpeg}
-    \caption{Ví dụ về Danh Sách Luật Bayesian}
+    \includegraphics[scale = 0.15]{self_rag_pseudo_code.jpeg}
+    \caption{Cách mô hình xử lý khi tạo sinh.}
     \label{fig:self_rag_pseudo_code}
 \end{figure}
 
+Thông qua Hình \ref{fig:overview_self_rag} và Hình \ref{fig:self_rag_pseudo_code} thì ta có thể phần nào hiểu được quá trình mô hình Self-RAG hoạt động. Khi mà việc truy xuất để trả lời để không cần thiết, như những lúc câu hỏi thì xoay quanh việc suy luận, thì mô hình hoạt động như mọi mô hình LLM khác, mà ko bị tốn chi phí cho việc truy vấn. Khi truy vấn thì sẽ kèm theo sau đó là phần đánh giá thông qua các token Critique, bao gồm $IsRel$, $IsSup$ và $IsUse$ để kiểm tra tính liên quan, tính hỗ trợ cho trả lời và quyết định có sử dụng hay không. Nếu như nhìn vào ví dụ ở Hình \ref{fig:overview_self_rag} thì văn bản hỗ trợ $d1$ sẽ được lựa chọn do $d2$ không trực tiếp cũng cấp bằng chứng để trả lời và $d3$ chỉ có liên quan một phần. 
+
+Tổng quan về quá trình huấn luyện thì như đã nói sơ ở trên là các Reflection tokens sẽ được tạo ra trong quá trình tạo sinh hoàn toàn tự nhiên, và điều đó dựa trên việc huấn luyện đặc biệt cho mô hình với bộ dữ liệu đã được tinh chỉnh. Chi tiết thì nhóm đã tạo nên bộ dữ liệu (corpus) với các đoạn văn bản được đánh dấu bởi các Retrieve Token để cho mô hình truy vấn $\mathcal{R}$ thực hiện sau. Bên cạnh đó là một mô hình riêng biệt chuyên cho việc đánh giá các đoạn văn bản (critic model) $\mathcal{C}$ sẽ tạo ra các Reflection Token Critique để đánh giá những đoạn văn bản, và nhúng vào trong bộ dữ liệu (corpus) để mô hình học được những điểm sẽ bị đánh giá. Từ 2 phương pháp trên, mô hình $\mathcal{M}$ có thể học được cách tạo sinh ra token để truy vấn và đánh giá ngay trong lúc tạo sinh. 
+
 \subsection{Huấn luyện Self-RAG}
+
 
 \subsubsection{Huấn luyện phần đánh giá}
 
