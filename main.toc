@@ -2,8 +2,8 @@
 \contentsline {section}{\numberline {2}Các công trình liên quan}{3}{}%
 \contentsline {section}{\numberline {3}Self-RAG: Học cách tìm nguồn, tạo sinh và đánh giá}{4}{}%
 \contentsline {subsection}{\numberline {3.1}Sơ lược bài toán và phương pháp}{4}{}%
-\contentsline {subsection}{\numberline {3.2}Huấn luyện Self-RAG}{6}{}%
-\contentsline {subsubsection}{\numberline {3.2.1}Huấn luyện phần đánh giá}{6}{}%
+\contentsline {subsection}{\numberline {3.2}Huấn luyện Self-RAG}{5}{}%
+\contentsline {subsubsection}{\numberline {3.2.1}Huấn luyện phần đánh giá}{5}{}%
 \contentsline {subsubsection}{\numberline {3.2.2}Huấn luyện phần tạo sinh}{6}{}%
 \contentsline {subsubsection}{\numberline {3.2.3}Suy Luận}{6}{}%
 \contentsline {section}{\numberline {4}Thí nghiệm}{6}{}%

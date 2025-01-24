@@ -27,7 +27,7 @@ Với sự phát triển vượt trôi của các mô hình Large Language Model
 \begin{figure} 
     \centering
     \includegraphics[scale = 0.2]{overview_self_rag.jpeg}
-    \caption{Ví dụ về Danh Sách Luật Bayesian}
+    \caption{Tổng quát sự khác biệt giữa Self-RAG và một mô hình RAG phổ biến.}
     \label{fig:overview_self_rag}
 \end{figure}
 
@@ -78,9 +78,10 @@ Thông qua Hình \ref{fig:overview_self_rag} và Hình \ref{fig:self_rag_pseudo_
 Tổng quan về quá trình huấn luyện thì như đã nói sơ ở trên là các Reflection tokens sẽ được tạo ra trong quá trình tạo sinh hoàn toàn tự nhiên, và điều đó dựa trên việc huấn luyện đặc biệt cho mô hình với bộ dữ liệu đã được tinh chỉnh. Chi tiết thì nhóm đã tạo nên bộ dữ liệu (corpus) với các đoạn văn bản được đánh dấu bởi các Retrieve Token để cho mô hình truy vấn $\mathcal{R}$ thực hiện sau. Bên cạnh đó là một mô hình riêng biệt chuyên cho việc đánh giá các đoạn văn bản (critic model) $\mathcal{C}$ sẽ tạo ra các Reflection Token Critique để đánh giá những đoạn văn bản, và nhúng vào trong bộ dữ liệu (corpus) để mô hình học được những điểm sẽ bị đánh giá. Từ 2 phương pháp trên, mô hình $\mathcal{M}$ có thể học được cách tạo sinh ra token để truy vấn và đánh giá ngay trong lúc tạo sinh. 
 
 \subsection{Huấn luyện Self-RAG}
-
+Trong phần này nhóm sẽ miêu tả quá trình huấn luyện 2 mô hình sẽ được sử dụng, đầu tiên là mô hình đánh giá $\mathcal{C}$ dùng cho việc đánh giá các đoạn văn bản và gắn các Reflection Token vào bộ dữ liệu huấn luyện. Kế tiếp sẽ là mô hình tạo sinh $\mathcal{M}$ huấn luyện trên bộ dữ liệu đã được tinh chỉnh.
 
 \subsubsection{Huấn luyện phần đánh giá}
+Việc gắn nhãn bằng tay cho các đoạn văn bản là một công việc tốn kém và không hiệu quả, do đó một vài nghiên cứu đã chuyển hướng ứng dụng các mô hình LLM tân tiến như mô hình GPT-4 để phục vụ cho các tác vụ này. Tuy nhiên chi phí cho việc gọi các mô hình như vậy vẫn rất cao và không hiệu quả, dẫn đến một phương pháp mới được đề cập nhiều hơn trong thời gian qua là "model distillation", một phương pháp liên quan đến việc huấn luyện mô hình mạng nơ-ron mới với kích thước nhỏ hơn nhưng vẫn giữ được hiệu suất tương đương với mô hình gốc. 
 
 \subsubsection{Huấn luyện phần tạo sinh}
 
