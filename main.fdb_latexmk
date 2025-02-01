@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 1737622874.18417 "main.bcf" "main.bbl" "main" 1737623158.7217 0
-  "main.bcf" 1737623158.64972 108549 35210f4f8eaa81293074ce8348fdda45 "pdflatex"
-  "references.bib" 1737622873.89975 476 3f1dbb1ffb8cb580c5c001f11a3b5afb ""
+["biber main"] 1738405120.05952 "main.bcf" "main.bbl" "main" 1738405381.85173 0
+  "main.bcf" 1738405381.79445 108619 cb68cdabb77008fef9224c316ed2d3b5 "pdflatex"
+  "references.bib" 1738405102.16279 836 72e60084809bfce95f5a59004e1e4296 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1737623158.12192 "/home/kagi/codes/llm_v2_report/main.tex" "main.pdf" "main" 1737623158.72201 0
-  "/home/kagi/codes/llm_v2_report/main.tex" 1737623157.93972 13679 0c9e2e386188b5361c95f0904aaaa4f9 ""
+["pdflatex"] 1738405381.21797 "/home/kagi/codes/llm_v2_report/main.tex" "main.pdf" "main" 1738405381.85202 0
+  "/home/kagi/codes/llm_v2_report/main.tex" 1738405381.0276 16553 687bf981cadd365ba524bc677884cdb0 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -84,11 +84,11 @@
   "images/overview_self_rag.jpeg" 1735960110.37467 601342 8ebb4dd8aaf18d23ee5439ee3d5d5e24 ""
   "images/reflection_token_explanation.jpeg" 1736931197.08816 165967 307a11ff3ccbf0c68fcca6c608632210 ""
   "images/self_rag_pseudo_code.jpeg" 1736931249.0158 356221 2bf8ee791a478fb031542edd7b594524 ""
-  "main.aux" 1737623158.64972 2946 8489914f99a77e1a2aee32e457a9cbe4 "pdflatex"
-  "main.bbl" 1737622877.82975 2515 6a8c08348667b89d46a7068a612039ac "biber main"
-  "main.run.xml" 1737623158.64972 2305 52095dfad395b381e9a32937e764a41c "pdflatex"
-  "main.tex" 1737623157.93972 13679 0c9e2e386188b5361c95f0904aaaa4f9 ""
-  "main.toc" 1737623158.64972 1145 12e5b40131b6c852cac4ef584f0f936d "pdflatex"
+  "main.aux" 1738405381.79445 3098 34d1010e18a23d2ff795c9fbc05c9d91 "pdflatex"
+  "main.bbl" 1738405120.96689 5300 d43d5d25dff8ba840b57eae3fd8f3957 "biber main"
+  "main.run.xml" 1738405381.79445 2305 52095dfad395b381e9a32937e764a41c "pdflatex"
+  "main.tex" 1738405381.0276 16553 687bf981cadd365ba524bc677884cdb0 ""
+  "main.toc" 1738405381.79445 1145 6b25eda62f11b00c56e0db299b122723 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"

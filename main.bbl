@@ -19,6 +19,77 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global/global}
+    \entry{guo2025deepseek}{article}{}{}
+      \true{moreauthor}
+      \true{morelabelname}
+      \name{author}{10}{}{%
+        {{hash=a65b6db35516aecf6dcadd97221ae4cf}{%
+           family={Guo},
+           familyi={G\bibinitperiod},
+           given={Daya},
+           giveni={D\bibinitperiod}}}%
+        {{hash=39ba26b2f24e305fc74063eeb50e3758}{%
+           family={Yang},
+           familyi={Y\bibinitperiod},
+           given={Dejian},
+           giveni={D\bibinitperiod}}}%
+        {{hash=8cb1dcd229cb02dbc21ed4c6bc6bce8a}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Haowei},
+           giveni={H\bibinitperiod}}}%
+        {{hash=1fe78774ca64f7faf5c4146809895eda}{%
+           family={Song},
+           familyi={S\bibinitperiod},
+           given={Junxiao},
+           giveni={J\bibinitperiod}}}%
+        {{hash=e2b49c18158617c0fd76406ee1a75a0c}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Ruoyu},
+           giveni={R\bibinitperiod}}}%
+        {{hash=1921948240c259729e2ec8093fcf848b}{%
+           family={Xu},
+           familyi={X\bibinitperiod},
+           given={Runxin},
+           giveni={R\bibinitperiod}}}%
+        {{hash=2e0f6670310682601840be6267950e06}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={Qihao},
+           giveni={Q\bibinitperiod}}}%
+        {{hash=a6d41a11337a0171f523504345057a93}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Shirong},
+           giveni={S\bibinitperiod}}}%
+        {{hash=87a8cdc413eb9ae298d444f4939e351f}{%
+           family={Wang},
+           familyi={W\bibinitperiod},
+           given={Peiyi},
+           giveni={P\bibinitperiod}}}%
+        {{hash=762edc61728d98f1821f6020a1203986}{%
+           family={Bi},
+           familyi={B\bibinitperiod},
+           given={Xiao},
+           giveni={X\bibinitperiod}}}%
+      }
+      \strng{namehash}{05781d618e09600311736f67baddba79}
+      \strng{fullhash}{4ad9f5233a6e2a5d14b439b46e881e97}
+      \strng{fullhashraw}{4ad9f5233a6e2a5d14b439b46e881e97}
+      \strng{bibnamehash}{05781d618e09600311736f67baddba79}
+      \strng{authorbibnamehash}{05781d618e09600311736f67baddba79}
+      \strng{authornamehash}{05781d618e09600311736f67baddba79}
+      \strng{authorfullhash}{4ad9f5233a6e2a5d14b439b46e881e97}
+      \strng{authorfullhashraw}{4ad9f5233a6e2a5d14b439b46e881e97}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{arXiv preprint arXiv:2501.12948}
+      \field{title}{Deepseek-r1: Incentivizing reasoning capability in llms via reinforcement learning}
+      \field{year}{2025}
+    \endentry
     \entry{jeong2024adaptive}{article}{}{}
       \name{author}{5}{}{%
         {{hash=5effb324ae23c45a5ed6c379c02d1f10}{%
