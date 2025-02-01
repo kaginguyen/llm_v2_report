@@ -94,12 +94,21 @@ Một vài nghiên các có đưa việc đánh giá vào quá trình huấn luy
 
 Nhưng nhìn lại thì hướng đi dùng Reinforcement Learning cũng là một hướng vẫn còn đang phát triển, và phổ biến nhất trong hiện tại chính là mô hình DeepSeek chính là dùng các phương pháp điều chỉnh Policy (Group Relative Policy Optimization) vào việc đưa ra mô hình DeekSeek R1 có độ hiệu quả rất cao trong việc suy luận \cite{guo2025deepseek}. 
 
-\subsubsection{Suy Luận}
+\subsubsection{Cách Self-RAG Suy Luận}
+Việc tạo các Reflection Token trong quá trình tạo sinh trực tiếp cho phép mô hình biến đổi linh hoạt hơn, phục vụ tốt yêu cầu phải đa dạng tác vụ. Với những trường hợp ưu tiên tính chính xác thì mô hình sẽ truy vấn nhiều hơn để đưa ra những câu trả lời sát với thực tế. Còn khi gặp những tác vụ mở, chưa rõ ràng như là soạn ra các đoạn văn bản cá nhân thì mô hình chuyển đổi linh hoạt qua việc giảm truy vấn, ưu tiên tính sáng tạo. 
 
+Để cho mô hình hoạt động linh hoạt được như vậy thì là một vài phương pháp được đưa vào. Đầu tiên là việc cho cho phép người dùng đặt ra các định mức truy vấn (threshold) thay vì để cho mô hình tự yêu cầu truy vấn. Từ đó có thể điều khiển chi tiết cách mô hình tạo sinh. Bên cạnh đó là việc cách Critique Tokens được sử dụng và tính toán, ở mỗi phân đoạn bước $t$ và có yêu cầu truy vấn, thì mô hình truy vấn $\mathcal{R}$ sẽ tìm về $K$ đoạn văn bản và mô hình $\mathcal{M}$ sẽ xử lý chúng song song với $K$ ứng viên kết quả. Khi đó ở mỗi bước $t$ thì ta sẽ thực hiện phương pháp Beam Search để tìm ra kết quả tốt nhất, phương pháp này đánh giá ứng viên thông qua điểm số $\mathcal{S}$ là tổng theo trọng số chuẩn hóa theo xác suất của các Critique Tokens, bao gồm các token (bao gồm $IsRel$, $IsSup$ và $IsUse$). Trọng số của các token đó có thể được điều chỉnh thông qua việc điều chỉnh siêu tham số $w^G$ để cho phép đặt độ ưu tiên cao hơn cho $IsUse$ khi cần các đoạn văn bản truy vấn chính xác hơn. 
 
 \section{Thí nghiệm}
 
 \subsection{Bài toán và dữ liệu}
+Để đánh giá một cách khách quán thì nhóm đưa ra một nhóm các bài kiểm tra đa dạng để có thể xác định và khảo sát được các đặc tính của một mô hình tốt như là tính chính xác, sự lưu loát và liệu câu trả lời có dựa trên sự thật. Bên cạnh đó cũng sẽ có những thí nghiệm về Zero-shot learning khi mà các hướng dẫn được đưa ra và không có ví dụ cụ thế. Chi tiết hơn về các bộ dữ liệu và tác vụ thử thách sẽ như sau: 
+
+\begin{itemize}
+    \item \textbf{Tác vụ đóng}: bao gồm 2 bộ dữ liệu, một là về kiểm tra độ chính xác dữ liệu y khoa cộng đồng (PubHealth), hai là một bộ trắc nghiệm suy luận kiểm tra khoa học (ARC-Challenge). Độ chính xác sẽ là trọng tâm chính của tác vụ này. 
+    \item \textbf{Tạo sinh ngắn}: bao gồm hai bộ dữ liệu trả lời câu hỏi trong miền mở, PopQA và TriviaQA-unfiltered, và mô hình sẽ trả lời các câu hỏi về tri thức thực tế. Đối với PopQA, chúng tôi sử dụng tập con gồm 1.399 truy vấn liên quan đến các thực thể hiếm, những trang Wikipedia có số view thấp dưới 100. Vì tập kiểm tra của TriviaQA-unfiltered không được công khai, nhóm sử dụng tập kiểm tra và tập xác thực từ các nghiên cứu trước đây, bao gồm 11.313 truy vấn. Tiêu chí đánh giá hiệu suất cho phần này sẽ dựa trên việc các câu trả lời chủ chốt (gold answer) có xuất hiện trong kết quả của mô hình hay không, thay vì yêu cầu phải trùng khớp chính xác từng chữ.
+    \item \textbf{Tạo sinh dài}: bao gồm tạo sinh tiểu sử và trả lời câu hỏi dạng dài. Nhóm sử dụng FactScore để đánh giá tiểu sử và áp dụng các chỉ số như độ chính xác, độ trôi chảy và độ phủ của trích dẫn để đánh giá câu trả lời dạng dài.
+\end{itemize}
 
 \subsection{Cài đặt thí nghiệm}
 

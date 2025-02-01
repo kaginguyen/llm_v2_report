@@ -1,14 +1,16 @@
 # Fdb version 4
-["biber main"] 1738405120.05952 "main.bcf" "main.bbl" "main" 1738405381.85173 0
-  "main.bcf" 1738405381.79445 108619 cb68cdabb77008fef9224c316ed2d3b5 "pdflatex"
+["biber main"] 1738405120.05952 "main.bcf" "main.bbl" "main" 1738436659.18754 0
+  "main.bcf" 1738436659.12428 108619 cb68cdabb77008fef9224c316ed2d3b5 "pdflatex"
   "references.bib" 1738405102.16279 836 72e60084809bfce95f5a59004e1e4296 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1738405381.21797 "/home/kagi/codes/llm_v2_report/main.tex" "main.pdf" "main" 1738405381.85202 0
-  "/home/kagi/codes/llm_v2_report/main.tex" 1738405381.0276 16553 687bf981cadd365ba524bc677884cdb0 ""
+["pdflatex"] 1738436659.41351 "/home/kagi/codes/llm_v2_report/main.tex" "main.pdf" "main" 1738436659.18779 0
+  "/home/kagi/codes/llm_v2_report/main.tex" 1738436659.22943 20504 8c629695b0aa4e586ecf8602d1a40812 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1136768653 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1136768653 1512 f21f83efb36853c0b70002322c1ab3ad ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm" 1136768653 1520 eccf95517727cb11801f4f1aee3a21b4 ""
@@ -29,6 +31,7 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb" 1215737283 138258 6525c253f16cededa14c7fd0da7f67b2 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx10.pfb" 1647811568 41966 9cbf64f67a0f9705354fe8aa43378ea4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb" 1647811568 41089 cd085a6112214f1ec9535fe0d1ee127f ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb" 1647811568 41608 f55c1a79be39d4e7ed224ba660d7353d ""
@@ -84,11 +87,11 @@
   "images/overview_self_rag.jpeg" 1735960110.37467 601342 8ebb4dd8aaf18d23ee5439ee3d5d5e24 ""
   "images/reflection_token_explanation.jpeg" 1736931197.08816 165967 307a11ff3ccbf0c68fcca6c608632210 ""
   "images/self_rag_pseudo_code.jpeg" 1736931249.0158 356221 2bf8ee791a478fb031542edd7b594524 ""
-  "main.aux" 1738405381.79445 3098 34d1010e18a23d2ff795c9fbc05c9d91 "pdflatex"
+  "main.aux" 1738436659.12428 3113 6749d02321a0d16c22f1dd3a5409b010 "pdflatex"
   "main.bbl" 1738405120.96689 5300 d43d5d25dff8ba840b57eae3fd8f3957 "biber main"
-  "main.run.xml" 1738405381.79445 2305 52095dfad395b381e9a32937e764a41c "pdflatex"
-  "main.tex" 1738405381.0276 16553 687bf981cadd365ba524bc677884cdb0 ""
-  "main.toc" 1738405381.79445 1145 6b25eda62f11b00c56e0db299b122723 "pdflatex"
+  "main.run.xml" 1738436659.12428 2305 52095dfad395b381e9a32937e764a41c "pdflatex"
+  "main.tex" 1738436659.22943 20504 8c629695b0aa4e586ecf8602d1a40812 ""
+  "main.toc" 1738436659.12428 1160 b312099cf9677d5d8803bb806d182bc5 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"
