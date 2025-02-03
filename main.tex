@@ -120,15 +120,63 @@ Nhóm thứ hai sẽ bao gồm các mô hình khác được huấn luyện vớ
 \subsection{Cài đặt thí nghiệm}
 Dữ liệu huấn luyện của nhóm sử dụng đã được đa dạng hóa các cặp input-output với bộ mẫu dữ liệu đã được xử lý của Open-Instruct và các bộ dữ liệu chuyên sâu về tri thức với tổng số là 150.000 cặp. Nhóm sử dụng 2 mô hình Llama2 7B và 13B làm mô hình ngôn ngữ nền cho phần mô hình $\mathcal{M}$ và Llama2 7B làm mô hình đánh giá $\mathcal{C}$. Đối với mô hình truy xuất thì nhóm sử dụng Contriever-MS MARCO được cài đặt mặc định và truy xuất tối đa mười tài liệu cho mỗi truy vấn được gọi bởi mô hình chính. 
 
-Theo cấu hình mặc định, trọng số của các tham số $IsRel$, $IsSup$ và $IsUse$ được cài đặt lần lượt là 1.0, 1.0 và 0.5. Để khuyến khích truy xuất thường xuyên, ngưỡng truy xuất sẽ là 0.2 cho hầu hết các tác vụ và 0 cho phần ALCE do yêu cầu cao về việc trích dẫn. Nhóm cũng tăng tốc suy luận bằng vllm. Ở cấp độ đoạn văn, phần Beam Seach đã đề cập ở trên sẽ sử dụng độ rộng beam là 2, tức là sẽ có 2 ứng viên cho kết quả, còn với tạo sinh ở tầng token, nhóm sử dụng phương pháp giải mã tham lam. Theo mặc định thì năm tài liệu hàng đầu từ Contriever-MS MARCO sẽ được cân nhắc, riêng đối với các tác vụ về tiểu sử và câu hỏi mở, mô hình sẽ sử dụng thêm năm tài liệu hàng đầu được truy xuất bởi một công cụ tìm kiếm trên web. Đối với ASQA, năm tài liệu do tác giả cung cấp từ  GTR-XXL sẽ được sử dụng trên tất cả các mô hình được so sánh để đảm bảo tính công bằng.
+Theo cấu hình mặc định, trọng số của các tham số $IsRel$, $IsSup$ và $IsUse$ được cài đặt lần lượt là 1.0, 1.0 và 0.5. Để khuyến khích truy xuất thường xuyên, ngưỡng truy xuất sẽ là 0.2 cho hầu hết các tác vụ và 0 cho phần ALCE do yêu cầu cao về việc trích dẫn. Nhóm cũng tăng tốc suy luận bằng vllm. Ở cấp độ đoạn văn, phần Beam Seach đã đề cập ở trên sẽ sử dụng độ rộng beam là 2, tức là sẽ có 2 ứng viên cho kết quả, còn với tạo sinh ở tầng token, nhóm sử dụng phương pháp giải mã tham lam. Theo mặc định thì năm tài liệu hàng đầu từ Contriever-MS MARCO sẽ được cân nhắc. Với các tác vụ về tiểu sử và câu hỏi mở, mô hình sẽ sử dụng thêm năm tài liệu hàng đầu được truy vấn từ một công cụ tìm kiếm trên web. Đối với ASQA, năm tài liệu do tác giả cung cấp từ  GTR-XXL sẽ được sử dụng trên tất cả các mô hình được so sánh để đảm bảo tính công bằng.
 \section{Kết quả và Phân tích} \label{sec:ketqua}
 
 \subsection{Kết quả}
+\begin{figure} 
+    \centering
+    \includegraphics[scale = 0.15]{experiments_results.png}
+    \caption{Kết quả thí nghiệm}
+    \label{fig:experiments_results}
+\end{figure}
+
+Khi so sánh với các mô hình không sử dụng truy xuất thì như Bảng \ref{fig:experiments_results} trình bày các mô hình so sánh không sử dụng truy xuất. SELF-RAG  cho thấy lợi thế hiệu suất đáng kể so với các mô hình LLM được tinh chỉnh có giám sát trên tất cả các nhiệm vụ và thậm chí vượt trội hơn ChatGPT trong các bài kiểm tra PubHealth, PopQA, tạo sinh tiểu sử và ASQA (đánh giá bằng Rouge và MAUVE). Phương pháp của chúng tôi cũng vượt xa một phương pháp đồng thời sử dụng kỹ thuật thiết kế lời nhắc phức tạp; cụ thể, trong nhiệm vụ sinh tiểu sử, các mô hình 7B và 13B của chúng tôi đánh bại CoVE, một mô hình yêu cầu Llama2 65B liên tục tinh chỉnh đầu ra thông qua lời nhắc lặp.
+
+So sánh với các mô hình có sử dụng truy xuất thì Self-RAG cũng vượt trội hơn so với các mô hình RAG hiện có trong nhiều nhiệm vụ, đạt hiệu suất tốt nhất trong số các mô hình dựa trên LLM không độc quyền. Mặc dù phương pháp của chúng tôi có kết quả vượt trội so với các mô hình so sánh, các LLM được điều chỉnh theo hướng dẫn mạnh mẽ có bổ sung truy xuất (ví dụ: Llama2-chat, Alpaca) vẫn cho thấy mức cải thiện đáng kể so với phiên bản không sử dụng truy xuất của chính chúng. Tuy nhiên, chúng tôi nhận thấy rằng các mô hình này gặp hạn chế trong các tác vụ không thể đơn giản sao chép hoặc trích xuất trực tiếp các đoạn văn đã truy xuất.
+
+Trong các nhiệm vụ như PubHealth và ARC-Challenge, các mô hình sử dụng truy xuất không cải thiện đáng kể so với các mô hình không có truy xuất. Ngoài ra, hầu hết các mô hình này gặp khó khăn trong việc cải thiện độ chính xác của trích dẫn. Trong bài kiểm tra ASQA, mô hình của chúng tôi cho thấy độ chính xác và khả năng thu hồi trích dẫn cao hơn đáng kể so với tất cả các mô hình khác, ngoại trừ ChatGPT. Nghiên cứu trước đây đã chỉ ra rằng ChatGPT có hiệu suất vượt trội trong nhiệm vụ này, vượt qua các mô hình LLM nhỏ hơn. Tuy nhiên, SELF-RAG của chúng tôi thu hẹp khoảng cách hiệu suất này và thậm chí vượt qua ChatGPT về độ chính xác trích dẫn, cho thấy khả năng đảm bảo rằng các tuyên bố do mô hình tạo ra hoàn toàn được hỗ trợ bởi bằng chứng trích dẫn.
+
+Chúng tôi cũng nhận thấy rằng, theo các chỉ số về độ chính xác thực tế, SELF-RAG 7B đôi khi vượt qua phiên bản 13B do mô hình nhỏ hơn có xu hướng tạo ra đầu ra ngắn hơn nhưng được căn cứ chặt chẽ hơn. Llama2-FT 7B, một mô hình so sánh được huấn luyện trên cùng các cặp hướng dẫn - đầu ra như SELF-RAG nhưng không có cơ chế truy xuất hay tự phản ánh trong quá trình huấn luyện (chỉ được bổ sung truy xuất trong giai đoạn kiểm tra), cho thấy hiệu suất kém hơn SELF-RAG. Kết quả này chỉ ra rằng lợi thế của SELF-RAG không chỉ đến từ dữ liệu huấn luyện mà còn phản ánh tính hiệu quả của toàn bộ khung mô hình SELF-RAG.
 
 \subsection{Phân tích}
+Nghiên cứu loại bỏ thành phần (Ablation Studies). Chúng tôi tiến hành một loạt thử nghiệm loại bỏ để xác định các yếu tố quan trọng trong khung mô hình của mình. Chúng tôi đánh giá hai biến thể mô hình được huấn luyện theo cách khác so với SELF-RAG:
+
+No Retriever: Mô hình ngôn ngữ được huấn luyện theo phương pháp tiêu chuẩn sử dụng các cặp hướng dẫn - đầu ra mà không có đoạn văn truy xuất.
+No Critic: Mô hình được huấn luyện với các cặp đầu vào - đầu ra luôn được bổ sung tài liệu truy xuất đứng đầu nhưng không có token phản hồi. Cách tiếp cận này tương tự với SAIL, nhưng chúng tôi sử dụng dữ liệu của mình thay vì tập dữ liệu Alpaca.
+Chúng tôi cũng thử nghiệm loại bỏ một số thành phần trong thuật toán suy luận:
+
+No retrieval: Tắt truy xuất trong quá trình suy luận.
+Hard constraints: Buộc mô hình phải truy xuất khi Retrieve = Yes, thay vì sử dụng ngưỡng thích ứng.
+Retrieve top 1: Luôn lấy và sử dụng tài liệu đứng đầu, tương tự phương pháp RAG tiêu chuẩn.
+Remove ISSUP: Loại bỏ điểm ISSUP khỏi tìm kiếm chùm có hướng dẫn phê bình.
+Các thử nghiệm này được thực hiện với 50.000 mẫu để tăng hiệu suất khám phá các biến thể huấn luyện. Chúng tôi tiến hành nghiên cứu trên ba tập dữ liệu: PopQA, PubHealth và ASQA. Trong ASQA, chúng tôi đánh giá trên 150 mẫu và loại trừ các biến thể có liên quan đến truy xuất thích ứng hoặc vô hiệu hóa truy xuất.
+
+Bảng 3a trình bày kết quả. Phần trên hiển thị các thử nghiệm loại bỏ trong huấn luyện, còn phần dưới là các thử nghiệm loại bỏ trong suy luận. Kết quả cho thấy tất cả các thành phần đều đóng vai trò quan trọng. Đặc biệt, có sự chênh lệch lớn về hiệu suất giữa SELF-RAG và các mô hình No Retriever hoặc No Critic, cho thấy rằng cơ chế huấn luyện LM với những thành phần này góp phần đáng kể vào sự cải thiện hiệu suất của SELF-RAG. Việc sử dụng tài liệu đứng đầu mà không xét đến mức độ liên quan (Retrieve top 1) làm giảm hiệu suất đáng kể trong PopQA và ASQA, trong khi loại bỏ ISSUP trong tìm kiếm chùm làm giảm hiệu suất trên ASQA. Điều này chứng minh rằng SELF-RAG có khả năng lựa chọn kết quả dựa trên nhiều tiêu chí chi tiết thay vì chỉ dựa vào mức độ liên quan của tài liệu truy xuất.
+
+Tùy chỉnh suy luận theo thời gian thực. Một lợi ích quan trọng của SELF-RAG là khả năng kiểm soát mức độ ảnh hưởng của từng loại phê bình đối với quá trình tạo văn bản. Chúng tôi phân tích ảnh hưởng của các trọng số tham số khác nhau đối với mô hình 7B trên ASQA, nơi có nhiều tiêu chí đánh giá.
+
+Hình 3b minh họa tác động của việc thay đổi trọng số ISSUP, yếu tố đánh giá mức độ hỗ trợ của đầu ra từ tài liệu truy xuất. Khi tăng trọng số này, độ chính xác trích dẫn tăng lên do mô hình ưu tiên các kết quả được hỗ trợ bởi bằng chứng. Tuy nhiên, việc tăng trọng số cũng làm giảm điểm MAUVE, vì khi mô hình tạo đầu ra dài hơn và trôi chảy hơn, sẽ có nhiều tuyên bố không hoàn toàn được hỗ trợ bởi trích dẫn. Điều này phù hợp với các phát hiện trước đây. Khả năng điều chỉnh tham số trong thời gian thực cho phép người dùng tùy chỉnh hành vi của mô hình mà không cần huấn luyện bổ sung.
+
+Sự đánh đổi giữa hiệu suất và độ chính xác. Khung mô hình của chúng tôi cho phép điều chỉnh tần suất truy xuất bằng cách thay đổi xác suất token phần thưởng. Chúng tôi đánh giá ảnh hưởng của ngưỡng thích ứng $\delta$ đối với độ chính xác tổng thể và tần suất truy xuất trên PubHealth và PopQA. Hình 3c cho thấy tần suất truy xuất thay đổi đáng kể theo giá trị $\delta$. Khi $\delta$ tăng (ít truy xuất hơn), hiệu suất giảm ít trên PubHealth nhưng giảm nhiều trên PopQA.
+
+Ảnh hưởng của kích thước dữ liệu huấn luyện. Chúng tôi phân tích tác động của quy mô dữ liệu đối với hiệu suất mô hình bằng cách lấy ngẫu nhiên 5.000, 10.000, 20.000 và 50.000 mẫu từ tập huấn luyện 150.000 mẫu, sau đó tinh chỉnh bốn phiên bản SELF-RAG 7B trên các tập dữ liệu con này. Hiệu suất của các mô hình trên PopQA, PubHealth và ASQA (độ chính xác trích dẫn) được so sánh với mô hình SELF-RAG huấn luyện trên toàn bộ 150.000 mẫu.
+
+Hình 4a, 4b và 4c minh họa kết quả. Trên tất cả các tập dữ liệu, tăng kích thước dữ liệu thường mang lại cải thiện hiệu suất, đặc biệt rõ rệt trong PopQA và ASQA. Tuy nhiên, chúng tôi không quan sát thấy sự cải thiện đáng kể trên Llama2-FT 7B khi tăng dữ liệu huấn luyện từ 50.000 lên 150.000 mẫu. Điều này cho thấy rằng việc mở rộng dữ liệu huấn luyện của SELF-RAG có thể tiếp tục nâng cao hiệu suất, mặc dù trong nghiên cứu này, chúng tôi giới hạn dữ liệu ở mức 150.000 mẫu.
+
+Đánh giá của con người. Chúng tôi thực hiện một đánh giá nhỏ về đầu ra của SELF-RAG và độ tin cậy của các token phản hồi được mô hình dự đoán. Cụ thể, chúng tôi lấy mẫu 50 kết quả từ PopQA và Bio để đánh giá.
+
+Dựa trên phương pháp của các nghiên cứu trước đây, các đánh giá viên con người chấm điểm S\$P:
+
+Plausible (hợp lý): Đầu ra có phù hợp với câu hỏi không?
+Supported (được hỗ trợ): Bằng chứng có đủ để xác minh tính hợp lệ của câu trả lời không?
+Trong đánh giá S\&P, chúng tôi không tính các trường hợp SELF-RAG dự đoán là không liên quan hoặc không có hỗ trợ. Các đánh giá viên cũng kiểm tra xem các token phản hồi ISREL và ISSUP có phù hợp với bằng chứng thực tế hay không.
+
+Kết quả cho thấy câu trả lời của SELF-RAG thường hợp lý và được hỗ trợ bởi các đoạn văn liên quan, với điểm S\&P cao hơn trong các câu trả lời ngắn của PopQA. Điều này phù hợp với các nghiên cứu trước. Ngoài ra, các đánh giá viên nhận thấy rằng dự đoán của mô hình về các token phản hồi ISREL và ISSUP phần lớn khớp với đánh giá của con người. Phụ lục Bảng 6 cung cấp một số ví dụ được chú thích kèm theo giải thích chi tiết.
+
 
 \section{Kết luận}
-
+Nghiên cứu này giới thiệu SELF-RAG, một khung mô hình mới nhằm nâng cao chất lượng và tính chính xác của các mô hình ngôn ngữ lớn (LLMs) thông qua truy xuất theo yêu cầu và tự phản hồi. SELF-RAG huấn luyện một mô hình ngôn ngữ để học cách truy xuất, tạo lập và đánh giá các đoạn văn bản cũng như chính đầu ra của mình bằng cách dự đoán các token tiếp theo từ vốn từ vựng gốc, cùng với các token đặc biệt mới được thêm vào, gọi là reflection tokens (token phản hồi). SELF-RAG cũng cho phép điều chỉnh hành vi của mô hình tại thời điểm suy luận bằng cách tận dụng các reflection tokens. Đánh giá toàn diện của chúng tôi trên sáu tác vụ với nhiều thước đo khác nhau cho thấy rằng SELF-RAG vượt trội đáng kể so với các LLM có số lượng tham số lớn hơn hoặc các phương pháp tạo văn bản có hỗ trợ truy xuất truyền thống.
 
 \printbibliography
 
