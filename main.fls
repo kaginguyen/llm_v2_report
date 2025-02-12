@@ -157,6 +157,14 @@ INPUT ./images/experiments_results.png
 INPUT ./images/experiments_results.png
 INPUT ./images/experiments_results.png
 INPUT ./images/experiments_results.png
+INPUT ./images/ablation_studies.png
+INPUT ./images/ablation_studies.png
+INPUT ./images/ablation_studies.png
+INPUT ./images/ablation_studies.png
+INPUT ./images/training_scale.png
+INPUT ./images/training_scale.png
+INPUT ./images/training_scale.png
+INPUT ./images/training_scale.png
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/vntex/vnr/vnti10.tfm
 INPUT main.aux
 INPUT main.run.xml
