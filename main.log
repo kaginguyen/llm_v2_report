@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.16)  13 FEB 2025 01:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex 2024.11.16)  15 FEB 2025 22:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -560,9 +560,9 @@ Package pdftex.def Info: images/self_rag_pseudo_code.jpeg  used on input line 71
 (pdftex.def)             Requested size: 262.118pt x 101.62529pt.
 
 
-[4 <./images/reflection_token_explanation.jpeg>]
+[4]
 
-[5 <./images/self_rag_pseudo_code.jpeg>]
+[5 <./images/reflection_token_explanation.jpeg> <./images/self_rag_pseudo_code.jpeg>]
 
 [6]
 
@@ -607,13 +607,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 Here is how much of TeX's memory you used:
  10358 strings out of 473362
  195040 string characters out of 5720989
- 1008630 words of memory out of 5000000
+ 1009735 words of memory out of 5000000
  33386 multiletter control sequences out of 15000+600000
  568795 words of font info for 54 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  66i,7n,81p,2132b,1337s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnbx12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnr17.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/vntex/vnr/vnti10.pfb>
-Output written on main.pdf (13 pages, 1616615 bytes).
+Output written on main.pdf (13 pages, 1618648 bytes).
 PDF statistics:
  118 PDF objects out of 1000 (max. 8388607)
  69 compressed objects within 1 object stream

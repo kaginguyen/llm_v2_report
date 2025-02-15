@@ -1,13 +1,13 @@
 # Fdb version 4
-["biber main"] 0 "main.bcf" "main.bbl" "main" 1739384740.06782 -1
-  "main.bcf" 1739384740.00806 108619 cb68cdabb77008fef9224c316ed2d3b5 "pdflatex"
+["biber main"] 0 "main.bcf" "main.bbl" "main" 1739633604.857 -1
+  "main.bcf" 1739633604.79013 108619 cb68cdabb77008fef9224c316ed2d3b5 "pdflatex"
   "references.bib" 1738405102.16279 836 72e60084809bfce95f5a59004e1e4296 ""
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1739384739.05502 "/home/kagi/codes/llm_v2_report/main.tex" "main.pdf" "main" 1739384740.06814 0
-  "/home/kagi/codes/llm_v2_report/main.tex" 1739384738.87139 35521 d59671fd1a300d294d9bf6f83bf69995 ""
+["pdflatex"] 1739633603.87488 "/home/kagi/codes/llm_v2_report/main.tex" "main.pdf" "main" 1739633604.85737 0
+  "/home/kagi/codes/llm_v2_report/main.tex" 1739633603.67519 35638 48c2a9b2ba3e5741a785093fb6ee0b2f ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm" 1136768653 1536 e07581a4bb3136ece9eeb4c3ffab8233 ""
@@ -90,11 +90,11 @@
   "images/reflection_token_explanation.jpeg" 1736931197.08816 165967 307a11ff3ccbf0c68fcca6c608632210 ""
   "images/self_rag_pseudo_code.jpeg" 1736931249.0158 356221 2bf8ee791a478fb031542edd7b594524 ""
   "images/training_scale.png" 1739380041.01968 103601 8dbe8e7c6f8d07e410e9fd373a91180a ""
-  "main.aux" 1739384740.00806 3854 15657233bdbf36b38a0be218c2dba169 "pdflatex"
+  "main.aux" 1739633604.79013 3854 81152ffe2dc50223c5bd7cafe8f47af6 "pdflatex"
   "main.bbl" 1738599693.7516 5300 d43d5d25dff8ba840b57eae3fd8f3957 "biber main"
-  "main.run.xml" 1739384740.00806 2305 52095dfad395b381e9a32937e764a41c "pdflatex"
-  "main.tex" 1739384738.87139 35521 d59671fd1a300d294d9bf6f83bf69995 ""
-  "main.toc" 1739384740.00806 1231 0ecc3e6afb074406c057204aedef605a "pdflatex"
+  "main.run.xml" 1739633604.79013 2305 52095dfad395b381e9a32937e764a41c "pdflatex"
+  "main.tex" 1739633603.67519 35638 48c2a9b2ba3e5741a785093fb6ee0b2f ""
+  "main.toc" 1739633604.79013 1231 d1cf9bb102ff5a73dfb77ad2b2b46240 "pdflatex"
   (generated)
   "main.aux"
   "main.bcf"
